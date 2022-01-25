@@ -1,0 +1,101 @@
+.popup {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba($color-black, .8);
+        z-index: 300;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s;
+
+        @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba($color-black, 0.3);
+        }
+        
+
+        &__content {
+            @include center-center;
+
+            width: 75%;
+            background-color: white;
+            border-radius: 3px;
+            box-shadow: 1rem 2rem 4rem rgba($color-black, 0.3);
+            display: table;
+            overflow: hidden;
+            transform: translate(-50%, -50%) scale(.5);
+            transition: all .5s .2s;
+        }   
+
+        &__left {
+            width: 33.3%;
+            display: table-cell;
+            padding: 0;
+        }
+
+        &__right {
+            width: 66.7%;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 3rem 5rem;
+        }
+
+        &__image-box {
+            width: 100%;
+            background-color: purple;
+        }
+
+        &__image {
+            display: block;
+            width: 100%;
+        }
+
+        &__text {
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+
+            column-count: 2;
+            column-gap: 2rem;
+
+            -webkit-hyphens: auto;
+        }
+
+        // Open States
+        &:target {
+            opacity: 1;
+            visibility:visible;
+        }
+
+        &:target &__content {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        &__close {
+            &:link,
+            &:visited {
+                font-size: 3rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $color-grey-dark-3;
+                position: absolute;
+                top: 1rem;
+                right: 3rem;
+                display: inline-block;
+                transition: all .5s ease;
+            }
+   
+            &:target {
+                opacity: 0;
+                visibility:hidden;
+            }
+
+            &:hover {
+                transform: scale(1.3);
+                color: $color-secondary-dark;
+            }
+        }
+}

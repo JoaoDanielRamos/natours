@@ -1,0 +1,88 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh;
+    position: relative;
+
+    @include respond(tablet-portrait) {
+        padding: 20rem 0 25rem 0; /* trbl */
+    }
+}
+
+.section-features {
+    margin-top: -10rem;
+    padding: 20rem 0;
+    background-size: cover;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)),
+        url(../../img/nat-4.jpg);
+    transform: skewY(-7deg);
+
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+}
+
+.section-testimonials {
+    padding: 15rem 0;
+    position: relative;
+}
+
+.section-booking {
+    padding: 15rem 0;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 1), rgba($color-primary-dark, 1));
+    
+    @include respond(tablet-portrait) {
+        padding: 10rem 0;
+    }
+}
+
+.booking {
+    background-image: linear-gradient(105deg,
+        rgba($color-white, 0.9) 52.5%,
+        rgba($color-white, 0) 47.5%),
+        url(../img/nat-10.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.3);
+
+    @include respond(tablet-landscape) {
+        background-image: linear-gradient(105deg,
+        rgba($color-white, 0.9) 0,
+        rgba($color-white, 0.9) 65%,
+        transparent 65%),
+        url(../img/nat-10.jpg);
+    }
+
+    @include respond(tablet-portrait) {
+        background-image: linear-gradient(to right,
+        rgba($color-white, 0.7) 0%,
+        rgba($color-white, 0.7) 100%,
+        transparent 20%),
+        url(../img/nat-10.jpg);
+    }
+
+    &__form {
+        width: 50%;
+        height: 50%;
+        padding: 6rem;
+
+        @include respond(tablet-landscape) {
+            width: 65%;
+        }
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+        }
+    }
+}
